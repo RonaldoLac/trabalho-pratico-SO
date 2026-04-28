@@ -27,6 +27,6 @@ Neste cenário, o sistema é inicializado com 10 instâncias do primeiro tipo de
 ├── atividade POO.csproj
 └── atividade POO.sln
 
-Relatório: A documentação completa, contendo a fundamentação teórica, a metodologia adotada e a análise dos resultados de execução, encontra-se disponível nos arquivos abaixo:relatorio.html - Recomendado para leitura e exportação em formato PDF.relatorio.md - Código-fonte do relatório.
+Relatório: A documentação completa, contendo a fundamentação teórica, a metodologia adotada e a análise dos resultados de execução, encontra-se disponível no arquivo de PDF. 
 
 Link do Repositório Público: https://github.com/RonaldoLac/trabalho-pratico-SO
