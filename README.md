@@ -79,5 +79,5 @@ O relatório segue a estrutura exigida:
 
 Substitua pelo link do seu repositório público no GitHub:
 ```
-https://github.com/seu-usuario/algoritmo-banqueiro
+https://github.com/RonaldoLac/trabalho-pratico-SO
 ```

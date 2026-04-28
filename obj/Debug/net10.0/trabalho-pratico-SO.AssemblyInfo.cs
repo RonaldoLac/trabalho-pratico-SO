@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("trabalho-pratico-SO")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+defc0241a957e2cd410b5d15f6a844df8da33252")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b7819a11ee6e1106f8595d362442117d216bf2f6")]
 [assembly: System.Reflection.AssemblyProductAttribute("trabalho-pratico-SO")]
 [assembly: System.Reflection.AssemblyTitleAttribute("trabalho-pratico-SO")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
