@@ -1,83 +1,32 @@
-# Algoritmo do Banqueiro (Multithreaded) - C#
+Markdown# Algoritmo do Banqueiro (Multithreaded) - C#
 
-Este repositório contém a implementação do **Algoritmo do Banqueiro** (Banker's Algorithm), proposto por Edsger Dijkstra em 1965, desenvolvido como trabalho prático da disciplina de Sistemas Operacionais.
+Este repositório contém a implementação do Algoritmo do Banqueiro, um método clássico de evasão de deadlocks em sistemas operacionais. O projeto foi desenvolvido como requisito do trabalho prático realizado pelos alunos Kauan Gomes Marques e Ronaldo Augusto Oliveira Lacerda da disciplina de Sistemas Operacionais.
 
-O objetivo do programa é simular um sistema bancário onde múltiplos clientes (threads) solicitam e liberam recursos concorrentemente. O banqueiro (algoritmo) avalia cada solicitação e só a aprova se o sistema permanecer em um **estado seguro**, prevenindo a ocorrência de *deadlocks*.
+A aplicação simula o comportamento de múltiplos clientes (threads) que solicitam e liberam recursos concorrentemente. A aprovação das requisições é gerida por um algoritmo que verifica continuamente se a alocação de recursos manterá o sistema em um estado seguro, negando solicitações que possam levar a impasses estruturais (*deadlocks*).
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 * **Linguagem:** C# (.NET)
-* **Concorrência:** `System.Threading.Thread`
-* **Sincronização:** Bloco `lock` (substituto nativo e seguro para *Mutexes*)
+* **Concorrência:** Utilização da classe `System.Threading.Thread` para simulação de múltiplos clientes.
+* **Sincronização:** Controle de exclusão mútua em variáveis compartilhadas por meio de blocos `lock` (equivalente ao *mutex*).
 
-## ⚙️ Pré-requisitos
-Para compilar e executar este projeto, você precisará ter o SDK do .NET instalado na sua máquina.
-* [Download do .NET SDK](https://dotnet.microsoft.com/download)
+## Instruções de Compilação e Execução
 
-## 🚀 Como Compilar e Executar
+1. Clone este repositório ou realize o download dos arquivos fonte.
+2. Acesse o diretório raiz do projeto por meio do terminal de comando.
+3. A execução exige a definição prévia da quantidade de recursos disponíveis, que deve ser passada como argumento via linha de comando.
 
-1. Clone este repositório ou baixe os arquivos fonte.
-2. Abra o terminal na pasta raiz do projeto (onde está o arquivo `.csproj` ou `Program.cs`).
-3. O programa exige que você passe a quantidade inicial de recursos disponíveis no "banco" diretamente via linha de comando.
-
-A sintaxe de execução é:
+**Sintaxe de execução:**
 ```bash
 dotnet run <recurso_1> <recurso_2> <recurso_3>
-```
-
-### Exemplo de execução:
-```bash
-dotnet run 10 5 7
-```
-
-Isso inicializa o sistema com:
-- 10 unidades do recurso tipo 1
-- 5 unidades do recurso tipo 2
-- 7 unidades do recurso tipo 3
-
-## 📊 Estrutura do Código
-
-O código implementa as seguintes estruturas de dados conforme especificado no trabalho:
-
-| Estrutura | Descrição |
-|-----------|-----------|
-| `available` | Quantidade de recursos disponíveis de cada tipo |
-| `maximum` | Demanda máxima de cada cliente por cada recurso |
-| `allocation` | Recursos atualmente alocados a cada cliente |
-| `need` | Necessidade remanescente (maximum - allocation) |
-
-### Funções Principais
-
-- **`IsSafe()`**: Verifica se o sistema está em um estado seguro
-- **`RequestResources()`**: Processa solicitações de recursos (retorna 0 se aprovado, -1 se negado)
-- **`ReleaseResources()`**: Libera recursos previamente alocados
-
-## 📁 Arquivos do Projeto
-
-```
-atividade POO/
-├── Program.cs          # Código fonte principal
-├── relatorio.html     # Relatório em formato HTML (para PDF)
-├── relatorio.md       # Relatório em formato Markdown
-├── redme.md           # Este arquivo
+Exemplo de uso:Bashdotnet run 10 5 7
+Neste cenário, o sistema é inicializado com 10 instâncias do primeiro tipo de recurso, 5 do segundo e 7 do terceiro.Estruturas de DadosO controle lógico dos recursos é realizado por meio das matrizes e vetores descritos abaixo, atualizados a cada iteração de solicitação e liberação:EstruturaDescriçãoavailableQuantidade de recursos disponíveis de cada tipo no sistema.maximumDemanda máxima de cada cliente por tipo de recurso.allocationQuantidade de recursos correntemente alocados a cada cliente.needNecessidade remanescente do cliente (maximum - allocation).Funções PrincipaisIsSafe(): Verifica se a concessão dos recursos mantém o sistema em um estado seguro, simulando temporariamente o término dos processos antes de efetivar a alocação.RequestResources(): Processa a solicitação de recursos de um cliente de forma atômica. Retorna 0 em caso de sucesso ou -1 caso o pedido seja negado para prevenção do deadlock.ReleaseResources(): Libera os recursos retidos por um cliente, adicionando-os novamente à estrutura available.Estrutura de DiretóriosPlaintextatividade POO/
+├── Program.cs         # Código-fonte principal da aplicação
+├── relatorio.html     # Relatório formatado (versão para exportação em PDF)
+├── relatorio.md       # Relatório textual em formato Markdown
+├── readme.md          # Documentação principal do repositório
 ├── atividade POO.csproj
 └── atividade POO.sln
-```
 
-## 📄 Relatório
+Relatório: A documentação completa, contendo a fundamentação teórica, a metodologia adotada e a análise dos resultados de execução, encontra-se disponível nos arquivos abaixo:relatorio.html - Recomendado para leitura e exportação em formato PDF.relatorio.md - Código-fonte do relatório.
 
-O relatório completo está disponível em:
-- **[relatorio.html](relatorio.html)** - Versão para impressão/PDF (abra no navegador e use "Salvar como PDF")
-- **[relatorio.md](relatorio.md)** - Versão em Markdown
-
-O relatório segue a estrutura exigida:
-1. Introdução sobre o tema
-2. Seção de Desenvolvimento
-3. Seção de Resultados
-4. Conclusão
-
-## 🔗 Link do Repositório
-
-Substitua pelo link do seu repositório público no GitHub:
-```
-https://github.com/RonaldoLac/trabalho-pratico-SO
-```
+Link do Repositório Público: https://github.com/RonaldoLac/trabalho-pratico-SO
